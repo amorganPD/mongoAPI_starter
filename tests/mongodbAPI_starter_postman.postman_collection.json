@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "044ea79e-459e-4d2e-a088-20381cc8aa2f",
+		"name": "mongodbAPI_starter_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "8c69b48a-c2ed-4c10-b459-1592ff629abd",
+			"name": "localhost:3000/player",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"testuser\",\n\t\"displayName\": \"friendly name\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/player",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7a55e9d3-4ae1-498a-8536-8e37df81bef5",
+			"name": "localhost:3000/player/5b9ed3093f89fb2fa84f87f6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/player/testuser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"player",
+						"testuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e132be24-ab01-4aae-afa8-e2dcbdff53c0",
+			"name": "localhost:3000/gameInstance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Fantastico\",\n\t\"creator\": {\n        \"_id\": \"5b9ee38b457f283530dd4905\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/gameInstance",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gameInstance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3f942b59-cd3a-4968-aa9f-45c083f7b57f",
+			"name": "localhost:3000/gameInstance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Fantastico2\",\n\t\"creator\": {\n        \"_id\": \"5b9ee380457f283530dd4905\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/gameInstance",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gameInstance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

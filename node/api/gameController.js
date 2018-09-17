@@ -1,27 +1,43 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Player = mongoose.model('player');
+const GameInstance = mongoose.model('GameInstance');
+const Player = mongoose.model('Player');
 
-exports.getPlayer = function(request, response) {
-  Player.find({ username: request.params.username }, function(err, player) {
+exports.getGameInstance = function(request, response) {
+  GameInstance.find({ guid: request.params.guid }, function(err, gameInstance) {
     if (err) {
       response.send(err);
     }
     else {
-      response.json(player);
+      response.json(gameInstance);
     }
   });
 };
 
-exports.createPlayer = function(request, response) {
-  var newPlayer = new Player(request.body);
-  newPlayer.save(function(err, player) {
+exports.createGameInstance = function(request, response) {
+  var newGameInstance = new GameInstance(request.body);
+  Player.countDocuments({ _id: newGameInstance.creator._id }, function(err, count) {
     if (err) {
       response.send(err);
     }
+    else if (count == 0) {
+      let error = {
+        noCreatorFound: true,
+        description: "no player of creator _id found"
+      }
+      response.json(error);
+    }
     else {
-      response.json(player);
+      newGameInstance.save(function(err, gameInstance) {
+        if (err) {
+          response.send(err);
+        }
+        else {
+          // Update gameInstances for the player who created the new game
+          response.json(gameInstance);
+        }
+      });
     }
   });
 };

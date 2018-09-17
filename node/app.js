@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 
-const Player = require('./api/gameModel');
-const routes = require('./api/gameRoutes');
+const GameInstance = require('./api/gameModel');
+const Player = require('./api/playerModel');
+const playerRoutes = require('./api/playerRoutes');
+const gameRoutes = require('./api/gameRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,11 +14,12 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-routes(app);
+playerRoutes(app);
+gameRoutes(app);
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.url).then(() => {
+mongoose.connect(dbConfig.url, { useNewUrlParser: true }).then(() => {
     console.log("Successfully connected to the database");    
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...');

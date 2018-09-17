@@ -1,26 +1,37 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const uuidGenerate = require('uuid/v4');
 
 const Schema = mongoose.Schema;
 
-var playerSchema = new Schema({
-  username: {
+var gameInstanceSchema = new Schema({
+  guid: {
     type: String,
-    required: 'username required',
-    unique: true
+    unique: true,
+    default: uuidGenerate
   },
+  name: {
+    type: String,
+    required: 'name required'
+  },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'Player',
+    required: ''
+  },
+  playersJoined: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Player',
+  }],
+  playersActive: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Player',
+  }],
   dateCreated: {
     type: Date,
     default: Date.now
   },
-  displayName: {
-    type: String,
-    required: ''
-  },
-  gameInstances: [{
-    type: String
-  }]
 });
 
-module.exports = mongoose.model('player', playerSchema);
+module.exports = mongoose.model('GameInstance', gameInstanceSchema);

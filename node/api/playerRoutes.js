@@ -1,15 +1,15 @@
 'use strict';
 
 module.exports = function(app) {
-  const game = require('./gameController');
+  const player = require('./playerController');
 
-  app.route('/gameInstance/')
-    .post(game.createGameInstance);
+  app.route('/player/')
+    .post(player.createPlayer);
     // .put(game.updatePlayer)
     // .delete(game.deletePlayer);
 
-  app.route('/gameInstance/:guid')
-    .get(game.getGameInstance);
+  app.route('/player/:username')
+    .get(player.getPlayer);
   
   // app.route('/players/:guid')
   //   .get(game.getPlayers)
