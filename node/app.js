@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 
 const GameInstance = require('./api/gameModel');
-const Player = require('./api/playerModel');
-const playerRoutes = require('./api/playerRoutes');
+const User = require('./api/userModel');
+const userRoutes = require('./api/userRoutes');
 const gameRoutes = require('./api/gameRoutes');
 
 const app = express();
@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-playerRoutes(app);
+userRoutes(app);
 gameRoutes(app);
 
 // mongoose instance connection url connection

@@ -4,15 +4,11 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-var playerSchema = new Schema({
+var userSchema = new Schema({
   username: {
     type: String,
     required: 'username required',
     unique: true
-  },
-  dateCreated: {
-    type: Date,
-    default: Date.now
   },
   displayName: {
     type: String,
@@ -20,7 +16,11 @@ var playerSchema = new Schema({
   },
   gameInstances: [{
     type: String
-  }]
+  }],
+  dateCreated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-module.exports = mongoose.model('Player', playerSchema);
+module.exports = mongoose.model('User', userSchema);

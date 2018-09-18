@@ -17,16 +17,16 @@ var gameInstanceSchema = new Schema({
   },
   creator: {
     type: Schema.Types.ObjectId,
-    ref: 'Player',
+    ref: 'User',
     required: ''
   },
-  playersJoined: [{
+  usersJoined: [{
     type: Schema.Types.ObjectId,
-    ref: 'Player',
+    ref: 'User',
   }],
-  playersActive: [{
+  usersActive: [{
     type: Schema.Types.ObjectId,
-    ref: 'Player',
+    ref: 'User',
   }],
   dateCreated: {
     type: Date,

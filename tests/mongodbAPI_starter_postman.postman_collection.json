@@ -6,8 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "8c69b48a-c2ed-4c10-b459-1592ff629abd",
-			"name": "localhost:3000/player",
+			"name": "localhost:3000/user",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -21,33 +20,32 @@
 					"raw": "{\n\t\"username\": \"testuser\",\n\t\"displayName\": \"friendly name\"\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/player",
+					"raw": "localhost:3000/user",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"player"
+						"user"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"_postman_id": "7a55e9d3-4ae1-498a-8536-8e37df81bef5",
 			"name": "localhost:3000/player/5b9ed3093f89fb2fa84f87f6",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/player/testuser",
+					"raw": "localhost:3000/user/testuser",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"player",
+						"user",
 						"testuser"
 					]
 				}
@@ -55,7 +53,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e132be24-ab01-4aae-afa8-e2dcbdff53c0",
 			"name": "localhost:3000/gameInstance",
 			"request": {
 				"method": "POST",
@@ -67,7 +64,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Fantastico\",\n\t\"creator\": {\n        \"_id\": \"5b9ee38b457f283530dd4905\"\n    }\n}"
+					"raw": "{\n\t\"name\": \"Fantastico\",\n\t\"creator\": {\n        \"_id\": \"5ba0530e12d8e21e68a1de67\"\n    }\n}"
 				},
 				"url": {
 					"raw": "localhost:3000/gameInstance",
@@ -83,7 +80,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3f942b59-cd3a-4968-aa9f-45c083f7b57f",
 			"name": "localhost:3000/gameInstance",
 			"request": {
 				"method": "POST",
@@ -105,6 +101,33 @@
 					"port": "3000",
 					"path": [
 						"gameInstance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/user PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"testuser\",\n\t\"displayName\": \"updated name\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
 					]
 				}
 			},

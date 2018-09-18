@@ -6,10 +6,10 @@ cd node
 node app.js
 ```
 
-Use a tool like Fiddler or Postman to create a POST request to create a player at:
+Use a tool like Fiddler or Postman to create a POST request to create a user at:
 
 ### Example Request
-POST `localhost:3000/player`
+POST `localhost:3000/user`
 ### Request Body
 ```json
 {
