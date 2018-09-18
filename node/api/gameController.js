@@ -14,14 +14,25 @@ exports.getGameInstance = function(request, response) {
     }
   });
 };
-
-exports.createGameInstance = function(request, response) {
-  var newGameInstance = new GameInstance(request.body);
-  Player.countDocuments({ _id: newGameInstance.creator._id }, function(err, count) {
+exports.updateGameInstance = function(request, response) {
+  GameInstance.updateOne({ guid: request.body.guid }, request.body, function(err, gameInstance) {
     if (err) {
       response.send(err);
     }
-    else if (count == 0) {
+    else {
+      response.json(gameInstance);
+    }
+  });
+};
+
+
+exports.createGameInstance = function(request, response) {
+  var newGameInstance = new GameInstance(request.body);
+  Player.updateOne({ _id: newGameInstance.creator._id }, {$push: { gameInstances: newGameInstance.guid } }, function(err, playerUpdate) {
+    if (err) {
+      response.send(err);
+    }
+    else if (playerUpdate.n == 0) {
       let error = {
         noCreatorFound: true,
         description: "no player of creator _id found"
@@ -34,7 +45,6 @@ exports.createGameInstance = function(request, response) {
           response.send(err);
         }
         else {
-          // Update gameInstances for the player who created the new game
           response.json(gameInstance);
         }
       });

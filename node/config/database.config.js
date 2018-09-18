@@ -1,3 +1,3 @@
 module.exports = {
-	url: 'mongodb://localhost:27017/starter'
+	url: 'mongodb://localhost:27017/mongoAPI-starter'
 }
