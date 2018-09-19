@@ -33,7 +33,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/player/5b9ed3093f89fb2fa84f87f6",
+			"name": "localhost:3000/player/:username",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -64,7 +64,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Fantastico\",\n\t\"creator\": {\n        \"_id\": \"5ba0530e12d8e21e68a1de67\"\n    }\n}"
+					"raw": "{\n\t\"name\": \"Fantastico\",\n\t\"creator\": {\n        \"_id\": \"5ba1c18b34fdce27d459287c\"\n    }\n}"
 				},
 				"url": {
 					"raw": "localhost:3000/gameInstance",
@@ -128,6 +128,70 @@
 					"port": "3000",
 					"path": [
 						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/gameInstance/:guid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/gameInstance/028288c6-a82d-4a7c-b44a-ec88ae13ab26",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gameInstance",
+						"028288c6-a82d-4a7c-b44a-ec88ae13ab26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/gameInstance/activeUser/:guid/:username",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/gameInstance/activeUser/028288c6-a82d-4a7c-b44a-ec88ae13ab26/testuser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gameInstance",
+						"activeUser",
+						"028288c6-a82d-4a7c-b44a-ec88ae13ab26",
+						"testuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/gameInstance/activeUser/:guid/:username",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/gameInstance/activeUser/028288c6-a82d-4a7c-b44a-ec88ae13ab26/testuser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gameInstance",
+						"activeUser",
+						"028288c6-a82d-4a7c-b44a-ec88ae13ab26",
+						"testuser"
 					]
 				}
 			},

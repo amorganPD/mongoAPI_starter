@@ -17,7 +17,12 @@ var userSchema = new Schema({
   gameInstances: [{
     type: String
   }],
-  dateCreated: {
+  _status: {
+    type: String,
+    enum: ['Active', 'Deleted'],
+    default: 'Active'
+  },
+  _dateCreated: {
     type: Date,
     default: Date.now
   }

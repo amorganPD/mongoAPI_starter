@@ -8,5 +8,10 @@ module.exports = function(app) {
     .put(game.updateGameInstance);
 
   app.route('/gameInstance/:guid')
-    .get(game.getGameInstance);
+    .get(game.getGameInstance)
+    .delete(game.deleteGameInstance);
+
+  app.route('/gameInstance/activeUser/:guid/:username')
+    .put(game.addActiveUser)
+    .delete(game.removeActiveUser);
 };

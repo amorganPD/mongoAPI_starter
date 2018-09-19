@@ -14,6 +14,18 @@ exports.getGameInstance = function(request, response) {
     }
   });
 };
+
+exports.deleteGameInstance = function(request, response) {
+  GameInstance.updateOne({ guid: request.params.guid }, { _status: 'Deleted'}, function(err, gameInstance) {
+    if (err) {
+      response.send(err);
+    }
+    else {
+      response.json(gameInstance);
+    }
+  });
+};
+
 exports.updateGameInstance = function(request, response) {
   GameInstance.updateOne({ guid: request.body.guid }, request.body, function(err, gameInstance) {
     if (err) {
@@ -24,7 +36,6 @@ exports.updateGameInstance = function(request, response) {
     }
   });
 };
-
 
 exports.createGameInstance = function(request, response) {
   var newGameInstance = new GameInstance(request.body);
@@ -46,6 +57,56 @@ exports.createGameInstance = function(request, response) {
         }
         else {
           response.json(gameInstance);
+        }
+      });
+    }
+  });
+};
+
+exports.addActiveUser = function(request, response) {
+  User.findOne({ username: request.params.username }, function(err, user) {
+    if (err) {
+      response.send(err);
+    }
+    else if (user.length == 0) {
+      let error = {
+        noUserFound: true,
+        description: "user " + request.params.username + " not found."
+      }
+      response.json(error);
+    }
+    else {
+      GameInstance.updateOne({ guid: request.params.guid }, { $addToSet: { allUsers: user._id, activeUsers: user._id } }, function(err, usersUpdate) {
+        if (err) {
+          response.send(err);
+        }
+        else {
+          response.json(usersUpdate);
+        }
+      });
+    }
+  });
+};
+
+exports.removeActiveUser = function(request, response) {
+  User.findOne({ username: request.params.username }, function(err, user) {
+    if (err) {
+      response.send(err);
+    }
+    else if (user.length == 0) {
+      let error = {
+        noUserFound: true,
+        description: "user " + request.params.username + " not found."
+      }
+      response.json(error);
+    }
+    else {
+      GameInstance.updateOne({ guid: request.params.guid }, { $pull: { activeUsers: user._id } }, function(err, usersUpdate) {
+        if (err) {
+          response.send(err);
+        }
+        else {
+          response.json(usersUpdate);
         }
       });
     }

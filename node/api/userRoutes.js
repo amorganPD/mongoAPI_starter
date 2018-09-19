@@ -6,8 +6,8 @@ module.exports = function(app) {
   app.route('/user/')
     .post(user.createUser)
     .put(user.updateUser);
-    // .delete(game.deleteUser);
 
   app.route('/user/:username')
-    .get(user.getUser);
+    .get(user.getUser)
+    .delete(user.deleteUser);
 };

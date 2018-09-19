@@ -14,6 +14,17 @@ exports.getUser = function(request, response) {
   });
 };
 
+exports.deleteUser = function(request, response) {
+  User.updateOne({ username: request.params.username }, { _status: 'Deleted'}, function(err, user) {
+    if (err) {
+      response.send(err);
+    }
+    else {
+      response.json(user);
+    }
+  });
+};
+
 exports.updateUser = function(request, response) {
   User.updateOne({ username: request.body.username }, request.body, function(err, user) {
     if (err) {

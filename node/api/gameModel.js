@@ -20,15 +20,20 @@ var gameInstanceSchema = new Schema({
     ref: 'User',
     required: ''
   },
-  usersJoined: [{
+  allUsers: [{
     type: Schema.Types.ObjectId,
     ref: 'User',
   }],
-  usersActive: [{
+  activeUsers: [{
     type: Schema.Types.ObjectId,
     ref: 'User',
   }],
-  dateCreated: {
+  _status: {
+    type: String,
+    enum: ['Active', 'Deleted'],
+    default: 'Active'
+  },
+  _dateCreated: {
     type: Date,
     default: Date.now
   },
