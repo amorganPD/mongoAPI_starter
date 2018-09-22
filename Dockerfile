@@ -1,6 +1,6 @@
 FROM node:10.11.0-jessie
 
-COPY . /api
+COPY ./node /api
 WORKDIR /api
 
 RUN npm install
