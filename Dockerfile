@@ -4,4 +4,4 @@ COPY ./node /api
 WORKDIR /api
 
 RUN npm install nodemon -g && npm install
-CMD ["nodemon", "app.js"]
+CMD ["nodemon", "-L", "app.js"]
