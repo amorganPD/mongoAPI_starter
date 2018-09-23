@@ -16,30 +16,30 @@ That will build a local docker image and then setup the docker container and run
 
 To test the API, either use the Postman collection or cURL:
 ```bash
-curl http://localhost:3000/user -H "Content-Type: application/json" -X POST -d '{"username":"testuser","displayName":"friendly name"}'
+curl http://localhost:3000/api/user -H "Content-Type: application/json" -X POST -d '{"username":"testuser","displayName":"friendly name"}'
 ```
 ```bash
-curl http://localhost:3000/user/testuser
+curl http://localhost:3000/api/user/testuser
 ```
 ___
 ## API Definition
 ### Player
-- `/user/`: POST (create)
-- `/user/`: DELETE
-- `/user/`: PUT (update)
-- `/user/{ username }`: GET
+- `/api/user/`: POST (create)
+- `/api/user/`: DELETE
+- `/api/user/`: PUT (update)
+- `/api/user/{ username }`: GET
 
 ### Game Instance
-- `/gameInstance/`: POST (create)
-- `/gameInstance`: DELETE
-- `/gameInstance`: PUT (update)
-- `/gameInstance/{ guid }`: GET
+- `/api/gameInstance/`: POST (create)
+- `/api/gameInstance`: DELETE
+- `/api/gameInstance`: PUT (update)
+- `/api/gameInstance/{ guid }`: GET
 
-- `/gameInstance/activeUser/{ guid }/{ username }`: PUT
-- `/gameInstance/activeUser/{ guid }/{ username }`: DELETE
+- `/api/gameInstance/activeUser/{ guid }/{ username }`: PUT
+- `/api/gameInstance/activeUser/{ guid }/{ username }`: DELETE
 
 ### Game State
-- `/gameInstance/{ guid }/gameState`: PUT
+- `/api/gameInstance/{ guid }/gameState`: PUT
 
 
 ## Data objects

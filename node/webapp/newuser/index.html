@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>mongoAPI_starter</title>
+    <link rel="stylesheet" type="text/css" href="../styles/site.css">
+</head>
+
+<body>
+	<div class="main-container" id="main-container">
+		<div class="vertical-align"></div>
+		<form class="formEntry" onSubmit="Site.route.createNewUser(event)">
+			<h2>Create New User</h2>
+			<div class="alternateHeader">or <a href="/">Sign In</a></div>
+			<div class="inputTitle">Username</div>
+			<input id="inputUserName" class="input-field input-field-pad" name="username" type="text" placeholder="a unique handle">
+			<div id="errorMessage-username" class="error-message">Invalid Username.</div>
+			<div class="inputTitle">Diplay Name</div>
+			<input id="inputDisplayName" class="input-field input-field-pad" name="displayName" type="text" placeholder="a public name">
+			<div id="errorMessage-displayName" class="error-message">Invalid Display Name.</div>
+			<div class="submit">
+				<button>Create User</button>
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="../scripts/api.js"></script>
+  <script type="text/javascript" src="../scripts/route.js"></script>
+  <script type="text/javascript" src="../scripts/site.js"></script>
+</body>
+
+</html>

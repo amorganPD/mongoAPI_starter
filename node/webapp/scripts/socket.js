@@ -1,4 +1,4 @@
-var SITE = (function(site, undefined) {
+var Site = (function(site, undefined) {
 
   var Socket = function () {
     _self = this;
@@ -32,4 +32,4 @@ var SITE = (function(site, undefined) {
   site.socket = new Socket();
 
   return site;
-})(SITE || {});
+})(Site || {});

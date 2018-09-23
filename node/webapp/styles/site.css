@@ -1,0 +1,114 @@
+body {
+  font-family: OpenSans-Regular;
+  background-color: #E9EAEA;
+  width: 100%;
+  height: 100vh;
+  margin: 0em;
+  padding: 0em;
+}
+
+button {
+  display: block;
+  min-width: 10em;
+  min-height: 3em;
+  padding: .6em 3em .6em 3em;
+  text-align: center;
+  vertical-align: middle;
+  margin: 1em auto;
+
+  font-family: OpenSans-Regular;
+  color: #FFFFFF;
+  background-color: #28A0AF;
+  border: none;
+  outline: none;
+  border-radius: .8em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+button:hover {
+	box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 4px 6px rgba(0,0,0,0.22);
+	cursor: pointer;
+}
+button:active {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+a {
+	text-decoration:none;
+	color: #28A0AF;
+}
+a:hover {
+	color: #28404F;
+}
+
+.main-container {
+	position: relative;
+	text-align: center;
+	height: 100%;
+	margin: 0em;
+	padding: 0em;
+}
+.vertical-align {
+	position: relative;
+	display: inline-block;
+	height: 100vh;
+	width: 0em;
+	vertical-align: middle;
+}
+
+.formEntry {
+	position: relative;
+	display: inline-block;
+	margin: auto 0em;
+}
+.alternateHeader {
+  position: relative;
+  top: -1.2em;
+  font-size:.8em;
+}
+
+.inputTitle {
+  text-align: left;
+  padding-left: 1.1em;
+}
+.input-field {
+  display: block;
+	min-width: 20em;
+	margin: 1em 1em .5em 1em;
+	background-color: white;
+	padding: 3px;
+	border: solid 1px;
+	border-color: #363B47;
+}
+.input-field-pad {
+	margin: .5em 1em .1em 1em;
+}
+.input-field:focus {
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.error-message {
+  opacity: 0;
+  position: relative;
+  font-family: OpenSans-Italic;
+  font-size: .8em;
+  color: #D80000;
+  text-align: right;
+  padding-right: 1.8em;
+  transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+.error-message-show{
+  opacity: 1;
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: "OpenSans-Italic";
+  src: url('../fonts/OpenSans-Italic.ttf');
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url('../fonts/OpenSans-Bold.ttf');
+}

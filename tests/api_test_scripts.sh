@@ -3,7 +3,7 @@
 DATE=`date +%Y-%m-%d`
 LOGDIR='./TestOutput/'
 FILENAME=$LOGDIR$DATE'_api_test_scripts.json'
-urlBase='http://localhost:3000/'
+urlBase='http://localhost:3000/api/'
 
 jq='/c/dev/tools/jq-win64.exe'
 

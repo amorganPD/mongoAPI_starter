@@ -1,10 +1,10 @@
-var SITE = (function(site, undefined) {
+var Site = (function(site, undefined) {
 
   site.hostIP = 'ws://localhost:8080';
   site.port = '8080';
 
   site.onReady = function () {
-    site.socket.connect();
+    // site.socket.connect();
 
     window.addEventListener('resize', function() { 
       // placeholder
@@ -16,4 +16,4 @@ var SITE = (function(site, undefined) {
   }, false);
 
   return site;
-})(SITE || {});
+})(Site || {});

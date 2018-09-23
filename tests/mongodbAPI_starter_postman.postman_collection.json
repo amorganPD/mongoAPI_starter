@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "localhost:3000/user",
+			"name": "localhost:3000/api/user",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -20,7 +20,7 @@
 					"raw": "{\n\t\"username\": \"testuser\",\n\t\"displayName\": \"friendly name\"\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/user",
+					"raw": "localhost:3000/api/user",
 					"host": [
 						"localhost"
 					],
@@ -33,13 +33,13 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/player/:username",
+			"name": "localhost:3000/api/player/:username",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/user/testuser",
+					"raw": "localhost:3000/api/user/testuser",
 					"host": [
 						"localhost"
 					],
@@ -53,7 +53,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/gameInstance",
+			"name": "localhost:3000/api/gameInstance",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -67,7 +67,7 @@
 					"raw": "{\n\t\"name\": \"Fantastico\",\n\t\"creator\": {\n        \"_id\": \"5ba1c18b34fdce27d459287c\"\n    }\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/gameInstance",
+					"raw": "localhost:3000/api/gameInstance",
 					"host": [
 						"localhost"
 					],
@@ -80,7 +80,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/gameInstance",
+			"name": "localhost:3000/api/gameInstance",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -94,7 +94,7 @@
 					"raw": "{\n\t\"name\": \"Fantastico2\",\n\t\"creator\": {\n        \"_id\": \"5b9ee380457f283530dd4905\"\n    }\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/gameInstance",
+					"raw": "localhost:3000/api/gameInstance",
 					"host": [
 						"localhost"
 					],
@@ -107,7 +107,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/user PUT",
+			"name": "localhost:3000/api/user PUT",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -121,7 +121,7 @@
 					"raw": "{\n\t\"username\": \"testuser\",\n\t\"displayName\": \"updated name\"\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/user",
+					"raw": "localhost:3000/api/user",
 					"host": [
 						"localhost"
 					],
@@ -134,13 +134,13 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/gameInstance/:guid",
+			"name": "localhost:3000/api/gameInstance/:guid",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/gameInstance/028288c6-a82d-4a7c-b44a-ec88ae13ab26",
+					"raw": "localhost:3000/api/gameInstance/028288c6-a82d-4a7c-b44a-ec88ae13ab26",
 					"host": [
 						"localhost"
 					],
@@ -154,13 +154,13 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/gameInstance/activeUser/:guid/:username",
+			"name": "localhost:3000/api/gameInstance/activeUser/:guid/:username",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/gameInstance/activeUser/028288c6-a82d-4a7c-b44a-ec88ae13ab26/testuser",
+					"raw": "localhost:3000/api/gameInstance/activeUser/028288c6-a82d-4a7c-b44a-ec88ae13ab26/testuser",
 					"host": [
 						"localhost"
 					],
@@ -176,13 +176,13 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/gameInstance/activeUser/:guid/:username",
+			"name": "localhost:3000/api/gameInstance/activeUser/:guid/:username",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/gameInstance/activeUser/028288c6-a82d-4a7c-b44a-ec88ae13ab26/testuser",
+					"raw": "localhost:3000/api/gameInstance/activeUser/028288c6-a82d-4a7c-b44a-ec88ae13ab26/testuser",
 					"host": [
 						"localhost"
 					],

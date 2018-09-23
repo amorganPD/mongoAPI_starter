@@ -3,15 +3,15 @@
 module.exports = function(app) {
   const game = require('./gameController');
 
-  app.route('/gameInstance/')
+  app.route('/api/gameInstance/')
     .post(game.createGameInstance)
     .put(game.updateGameInstance);
 
-  app.route('/gameInstance/:guid')
+  app.route('/api/gameInstance/:guid')
     .get(game.getGameInstance)
     .delete(game.deleteGameInstance);
 
-  app.route('/gameInstance/activeUser/:guid/:username')
+  app.route('/api/gameInstance/activeUser/:guid/:username')
     .put(game.addActiveUser)
     .delete(game.removeActiveUser);
 };
