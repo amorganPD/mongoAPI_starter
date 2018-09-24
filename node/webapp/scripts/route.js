@@ -1,4 +1,4 @@
-var Site = (function(site, api, undefined) {
+var Site = (function(site, api, $, undefined) {
 
   var Route = function () {
     var rootFileName = "";
@@ -44,6 +44,18 @@ var Site = (function(site, api, undefined) {
       window.open(data, "_self");
     }
     
+    this.decodeURI = function() {
+      if (location.search == "" || location.search == undefined) {
+        console.log("Error: No Data")
+      }
+      else {
+        URIString = location.search.substr(1);
+        if(URIString.search('aspxerrorpath') < 0) {
+          return JSON.parse(decodeURIComponent(URIString));
+        }
+      }
+  };
+    
     this.validateUser = function (event) {
       var username = document.getElementById('inputUserName').value;
       if (ValidateUsername(username)) {
@@ -76,4 +88,4 @@ var Site = (function(site, api, undefined) {
   site.route = new Route();
 
   return site;
-})(Site || {}, API || {});
+})(Site || {}, API || {}, jQuery);

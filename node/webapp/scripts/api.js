@@ -20,7 +20,7 @@ var API = (function (api, $, undefined) {
         console.log(JSON.stringify(errorThrown));
       }
     });
-  }
+  };
   api.validateUser = function (Username, callback) {
     $.ajax({
       dataType: "json",
@@ -40,7 +40,27 @@ var API = (function (api, $, undefined) {
         console.log(JSON.stringify(errorThrown));
       }
     });
-  }
+  };
+  api.getUser = function (Username, callback) {
+    $.ajax({
+      dataType: "json",
+      url: api.url + "/user/" + Username,
+      method: "GET",
+      data: {},
+      success: function (data) {
+        if (data.length == 0) {
+          callback.error();
+        }
+        else {
+          callback.caller(data);
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        callback.error();
+        console.log(JSON.stringify(errorThrown));
+      }
+    });
+  };
 
   return api;
 })(API || {}, jQuery || {});
