@@ -41,6 +41,10 @@ a:hover {
 	color: #28404F;
 }
 
+select:focus {
+	outline: none;
+}
+
 .main-container {
 	position: relative;
 	text-align: center;
@@ -61,12 +65,20 @@ a:hover {
 	display: inline-block;
 	margin: auto 0em;
 }
+.formEntry-center {
+  display: block;
+  text-align: center;
+}
 .alternateHeader {
   position: relative;
   top: -1.2em;
   font-size:.8em;
 }
 
+.inputWrapper {
+  margin: 0em auto;
+  width: 18.8em;
+}
 .inputTitle {
   text-align: left;
   padding-left: 1.1em;

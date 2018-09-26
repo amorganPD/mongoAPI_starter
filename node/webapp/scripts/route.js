@@ -1,7 +1,7 @@
 var Site = (function(site, api, $, undefined) {
 
   var Route = function () {
-    var rootFileName = "";
+    this.rootFileName = "";
 
     var EncodeURI = function (Username) {
       var uri = {
@@ -21,9 +21,9 @@ var Site = (function(site, api, $, undefined) {
       }
     }
     var ValidateDisplayName = function (Username) {
-    if ((Username == null ) || (Username == undefined ) || (Username == "" )) {
-      document.getElementById("errorMessage-displayName").classList.add("error-message-show");
-      return false;
+      if ((Username == null ) || (Username == undefined ) || (Username == "" )) {
+        document.getElementById("errorMessage-displayName").classList.add("error-message-show");
+        return false;
       }
       else {
         document.getElementById("errorMessage-displayName").classList.remove("error-message-show");
@@ -61,7 +61,7 @@ var Site = (function(site, api, $, undefined) {
       if (ValidateUsername(username)) {
         var callback = {
           caller: WindowOpen,
-          data: "/lobby/" + rootFileName + "?" + EncodeURI(username),
+          data: "/lobby/" + this.rootFileName + "?" + EncodeURI(username),
           error: errorNoUserFound
         }
         api.validateUser(username, callback);
@@ -75,7 +75,7 @@ var Site = (function(site, api, $, undefined) {
       if (ValidateUsername(username) && ValidateDisplayName(displayName)) {
         var callback = {
           caller: WindowOpen,
-          data: "/lobby/" + rootFileName + "?" + EncodeURI(username),
+          data: "/lobby/" + this.rootFileName + "?" + EncodeURI(username),
           error: errorUserAlreadyExists
         }
         api.createNewUser(username, displayName, callback);

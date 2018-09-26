@@ -3,15 +3,33 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>mongoAPI_starter</title>
+    <title>User Lobby - mongoAPI_starter</title>
     <link rel="stylesheet" type="text/css" href="../styles/site.css">
     <link rel="stylesheet" type="text/css" href="./lobby.css">
 </head>
 
 <body>
 	<div class="main-container" id="main-container">
-			<div><div id="userDisplayName" class="user-profile-text">user</div></div>
-			<h2>Game Lobby</h2>
+		<div><div id="userDisplayName" class="user-profile-text">user</div></div>
+		<h2>User Lobby</h2>
+		<div >Game Instances</div>
+		<form class="formEntry formEntry-center" onSubmit="Site.lobby.enterGameInstance(event)">
+			<select id="gameInstances" class="listbox" size="8">
+
+			</select>
+			<button>Enter</button>
+		</form>
+		<form class="formEntry formEntry-center" onSubmit="Site.lobby.createNewGameInstance(event)">
+			<h2>Create New Game Instance</h2>
+			<div class="inputWrapper">
+				<div class="inputTitle">Name</div>
+				<input id="inputGameName" class="input-field input-field-pad" name="name" type="text" placeholder="name your game">
+				<div id="errorMessage-name" class="error-message">Invalid Name.</div>
+			</div>
+			<div class="submit">
+				<button>Save</button>
+			</div>
+		</form>
 	</div>
 
 	<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>

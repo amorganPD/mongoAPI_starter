@@ -62,5 +62,26 @@ var API = (function (api, $, undefined) {
     });
   };
 
+  api.createNewGameInstance = function (Name, User, callback) {
+    $.ajax({
+      dataType: "json",
+      url: api.url + "/gameInstance/",
+      method: "POST",
+      data: {
+        name: Name,
+        creator: {
+          _id: User._id
+        }
+      },
+      success: function (data) {
+        callback.caller(data);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        callback.error();
+        console.log(JSON.stringify(errorThrown));
+      }
+    });
+  };  
+
   return api;
 })(API || {}, jQuery || {});

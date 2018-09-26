@@ -4,3 +4,14 @@
   text-align: right;
   padding: 1em;
 }
+
+.listbox {
+  width: 21.2em;
+}
+option {
+  padding: .3em;
+}
+option:checked {
+  background-color: #28A0AF;
+  background: #28A0AF;
+}

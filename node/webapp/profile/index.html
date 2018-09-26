@@ -3,7 +3,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>Create New User - mongoAPI_starter</title>
+    <title>Profile - mongoAPI_starter</title>
     <link rel="stylesheet" type="text/css" href="../styles/site.css">
 </head>
 
@@ -11,11 +11,9 @@
 	<div class="main-container" id="main-container">
 		<div class="vertical-align"></div>
 		<form class="formEntry" onSubmit="Site.route.createNewUser(event)">
-			<h2>Create New User</h2>
-			<div class="alternateHeader">or <a href="/">Sign In</a></div>
+			<h2>Update Profile</h2>
 			<div class="inputTitle">Username</div>
-			<input id="inputUserName" class="input-field input-field-pad" name="username" type="text" placeholder="a unique handle">
-			<div id="errorMessage-username" class="error-message">Invalid Username.</div>
+			<input id="inputUserName" class="input-field input-field-pad" name="username" type="text" placeholder="a unique handle" disabled>
 			<div class="inputTitle">Diplay Name</div>
 			<input id="inputDisplayName" class="input-field input-field-pad" name="displayName" type="text" placeholder="a public name">
 			<div id="errorMessage-displayName" class="error-message">Invalid Display Name.</div>
